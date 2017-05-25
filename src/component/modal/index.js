@@ -74,17 +74,17 @@ class Modal extends React.Component {
                         <Flex justifyCenter alignCenter className="gm-modal-type-title">
                             <i className={iconClassName[type]}/>{title}
                         </Flex>
-                        <div className="gm-modal-type-content gm-text-desc">
+                        <div className="gm-text-desc gm-padding-tb-15">
                             {children}
                         </div>
 
-                        <Flex justifyEnd className="gm-modal-dialog-btns">
+                        <Flex justifyEnd>
                             {(type === 'confirm') && (
-                                <button className="btn btn-default" onClick={this.handleCancel}>取消</button>
+                                <button className="btn btn-sm btn-default" onClick={this.handleCancel}>取消</button>
                             )}
                             <div className="gm-gap-10"/>
                             <button
-                                className={className("btn btn-primary", okBtnClassName)}
+                                className={className("btn btn-sm btn-primary", okBtnClassName)}
                                 onClick={this.handleOk}>
                                 确认
                             </button>
