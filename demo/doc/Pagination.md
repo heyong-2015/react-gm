@@ -11,7 +11,7 @@ imports:
 ::: demo 带count
 ```js
 const pagination = {
-    count: 60,
+    count: 70,
     offset: 0,
     limit: 10
 };
@@ -20,6 +20,34 @@ const pagination = {
 <Flex alignCenter>
     <PaginationText data={pagination}/>
     <Pagination data={pagination} toPage={data => console.log(data)}/>
+</Flex>
+```
+:::
+
+::: demo nextVersion
+```js
+const paginationNew1 = {
+    is_first: false,
+    is_last: false,
+    limit: 10,
+    current: 2,
+    list: [{__cursor: 1},2,3,4,5,6,7,8,9,{__cursor:10}]
+};
+const paginationNew2 = {
+    peek: 37,
+    limit: 10,
+    current: 2,
+    list: [{__cursor: 1},2,3,4,5,6,7,8,9,{__cursor:10}]
+};
+```
+```jsx
+<Flex alignCenter>
+    <PaginationText data={paginationNew1} nextVersion/>
+    <Pagination nextVersion data={paginationNew1} toPage={data => console.log(data)}/>
+</Flex>
+<Flex alignCenter>
+    <PaginationText data={paginationNew2} nextVersion/>
+    <Pagination nextVersion data={paginationNew2} toPage={data => console.log(data)}/>
 </Flex>
 ```
 :::
