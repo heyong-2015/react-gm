@@ -12,7 +12,6 @@ class Radio extends React.Component {
             inline,
             name
         } = this.props;
-
         if (!inline) {
             return (
                 <div>
@@ -23,7 +22,9 @@ class Radio extends React.Component {
                             value={value}
                             checked={checked}
                             onChange={onChange}
+                            className="gm-radio"
                         />
+                        <span/>
                         {children}
                     </label>
                 </div>
@@ -37,7 +38,9 @@ class Radio extends React.Component {
                         value={value}
                         checked={checked}
                         onChange={onChange}
+                        className="gm-radio"
                     />
+                    <span/>
                     {children}
                 </label>
             );

@@ -12,7 +12,6 @@ class Checkbox extends React.Component {
             name,
             inline
         } = this.props;
-
         if (!inline) {
             return (
                 <div>
@@ -23,7 +22,9 @@ class Checkbox extends React.Component {
                             value={value}
                             checked={checked}
                             onChange={onChange}
+                            className="gm-checkbox"
                         />
+                        <span/>
                         {children}
                     </label>
                 </div>
@@ -37,7 +38,9 @@ class Checkbox extends React.Component {
                         value={value}
                         checked={checked}
                         onChange={onChange}
+                        className="gm-checkbox"
                     />
+                    <span/>
                     {children}
                 </label>
             );
