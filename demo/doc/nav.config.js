@@ -3,6 +3,7 @@ import {Menu} from '../../src/index';
 import {history} from "../service";
 import {withRouter} from 'react-router-dom';
 import _ from 'lodash';
+import {Framework} from '../../framework';
 
 const data = [{
     name: 'Guide',
@@ -76,12 +77,15 @@ const data = [{
 @withRouter
 class NavConfig extends React.Component {
     handleSelect(item) {
+        Framework.scrollTop();
         history.push(item.path);
     }
 
     render() {
         const {location: {pathname}} = this.props;
         let selected = null;
+
+        // doc 性能无须考虑太多，暂且每次render处理
         _.find(data, v => {
             return selected = _.find(v.sub, s => s.path === pathname);
         });

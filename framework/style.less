@@ -1,0 +1,148 @@
+@import "../src/less/variables.less";
+@import "../src/less/mixins.less";
+@import "../src/less/custom.less";
+@import "../src/css/variables.less";
+@import "./mobile";
+@import "./print";
+
+.gm-framework {
+
+  // 满足内容区域最小一屏
+  &-full-screen {
+    min-height: 100vh;
+  }
+
+  // container
+  &-container {
+    width: 85%;
+    margin: auto;
+  }
+
+  // top
+  &-top {
+    &-header {
+      &-default {
+        height: 30px;
+        background: #303030;
+        color: white;
+        font-size: 12px;
+        line-height: 30px;
+
+        &-mobile-nav {
+          display: none;
+          line-height: 30px;
+          padding: 0 10px;
+        }
+
+        &-settings {
+          .list-group {
+            margin-bottom: 0;
+            .list-group-item {
+              padding: 5px;
+              border-top: none
+            }
+          }
+        }
+      }
+    }
+
+    &-content {
+      &-default {
+        height: 60px;
+
+        &-nav > a, &-jump > div > a {
+          font-size: 16px;
+          color: black;
+          display: inline-block;
+          padding: 9px 20px 5px;
+          border-bottom: 4px solid transparent;
+          margin-left: 10px;
+          text-decoration: none;
+          cursor: pointer;
+
+          &.active {
+            color: @brand-primary;
+            border-bottom: 4px solid @brand-primary;
+          }
+          &:hover {
+            background: @gm-back-body-bg;
+          }
+        }
+
+        &-jump {
+          position: relative;
+          &::before {
+            content: '';
+            border-left: 1px solid @text-color;
+            position: absolute;
+            bottom: 12px;
+            height: 16px;
+            left: 5px;
+          }
+
+          .list-group {
+            margin-top: -5px;
+            min-width: 100px;
+            margin-bottom: 0;
+
+            .list-group-item {
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // center
+  &-center {
+    .gm-framework-container {
+      padding: 20px 0;
+    }
+  }
+
+  // left
+  &-left {
+    width: 190px;
+    padding-right: 20px;
+  }
+
+  // breadcrumb
+  &-breadcrumb {
+    &-default {
+      background: none;
+      position: relative;
+      margin-bottom: 0;
+      padding: 3px 0 15px 20px;
+      line-height: 1;
+      font-size: 12px;
+      &:before {
+        content: "";
+        top: 2px;
+        left: 0;
+        position: absolute;
+        display: block;
+        height: 13px;
+        width: 13px;
+        background: @brand-primary;
+      }
+      a:last-child {
+        color: @brand-primary;
+      }
+      &-link {
+        color: @gm-color-second;
+      }
+    }
+  }
+
+  // copyright
+  &-copyright {
+    &-default {
+      padding: 0 10px;
+      height: 80px;
+      background: #303030;
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
