@@ -12,8 +12,8 @@ class Breadcrumb extends React.Component {
 
         return (
             <ol className="gm-framework-breadcrumb-default breadcrumb">
-                {_.map(data.slice(0, -1), v => (
-                    <li key={v.name + v.link}>
+                {_.map(data.slice(0, -1), (v, i) => (
+                    <li key={i + '_' + v.link}>
                         <a
                             href={v.link}
                             className="gm-framework-breadcrumb-default-link"

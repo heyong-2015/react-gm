@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {Flex, LayoutRoot, Emitter} from '../src/index';
 import classNames from 'classnames';
 
-import './style.less';
-
 class Framework extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +18,7 @@ class Framework extends React.Component {
     }
 
     render() {
-        const {top, topHeader, menu, breadcrumb, copyright, children} = this.props;
+        const {topContent, topHeader, menu, breadcrumb, copyright, children} = this.props;
 
         return (
             <div className="gm-framework">
@@ -32,15 +30,15 @@ class Framework extends React.Component {
                             {topHeader && (
                                 <div className="gm-framework-top-header">{topHeader}</div>
                             )}
-                            {top && (
-                                <div className="gm-framework-top-content">{top}</div>
+                            {topContent && (
+                                <div className="gm-framework-top-content">{topContent}</div>
                             )}
                         </div>
                         <div className="gm-framework-center">
                             <Flex className="gm-framework-container">
-                                <Flex className="gm-framework-left">{menu}</Flex>
+                                {menu && <div className="gm-framework-left">{menu}</div>}
                                 <Flex flex column className="gm-framework-right">
-                                    <div className="gm-framework-breadcrumb">{breadcrumb}</div>
+                                    {breadcrumb && <div className="gm-framework-breadcrumb">{breadcrumb}</div>}
                                     <div className="gm-framework-content">{children}</div>
                                 </Flex>
                             </Flex>
@@ -59,7 +57,7 @@ Framework.scrollTop = function () {
 };
 
 Framework.propTypes = {
-    top: PropTypes.element,
+    topContent: PropTypes.element,
     topHeader: PropTypes.element,
     menu: PropTypes.element,
     breadcrumb: PropTypes.element,

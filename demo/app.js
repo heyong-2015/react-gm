@@ -102,7 +102,7 @@ class App extends React.Component {
 
         return (
             <Framework
-                top={this.renderTopContent()}
+                topContent={this.renderTopContent()}
                 menu={pathname.startsWith('/doc') ? <NavConfigDoc/> : <NavConfigStandard/>}
             >
                 <div onClick={this.handleClickAnchor}>

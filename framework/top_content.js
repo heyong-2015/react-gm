@@ -59,7 +59,7 @@ TopContent.propTypes = {
     navSelected: PropTypes.any,
     jump: PropTypes.string,
     jumpLink: PropTypes.string,
-    jumpList: PropTypes.array
+    jumpList: PropTypes.array // [{text, link}]
 };
 
 export default TopContent;
