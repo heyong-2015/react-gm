@@ -2,8 +2,6 @@
 @import "../src/less/mixins.less";
 @import "../src/less/custom.less";
 @import "../src/css/variables.less";
-@import "./mobile";
-@import "./print";
 
 .gm-framework {
 
@@ -32,6 +30,7 @@
           display: none;
           line-height: 30px;
           padding: 0 10px;
+          cursor: pointer;
         }
 
         &-settings {
@@ -149,3 +148,7 @@
     }
   }
 }
+
+// 放后面
+@import "./mobile.less";
+@import "./print.less";

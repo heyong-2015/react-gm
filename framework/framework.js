@@ -18,10 +18,12 @@ class Framework extends React.Component {
     }
 
     render() {
-        const {topContent, topHeader, menu, breadcrumb, copyright, children} = this.props;
+        let {showMobileMenu, topContent, topHeader, menu, breadcrumb, copyright, children} = this.props;
 
         return (
-            <div className="gm-framework">
+            <div className={classNames("gm-framework", {
+                "gm-framework-mobile-menu": showMobileMenu
+            })}>
                 <div className={classNames("gm-framework-inner", {
                     'gm-filter-blur-transition': this.state.blur
                 })}>
@@ -57,6 +59,7 @@ Framework.scrollTop = function () {
 };
 
 Framework.propTypes = {
+    showMobileMenu: PropTypes.bool,
     topContent: PropTypes.element,
     topHeader: PropTypes.element,
     menu: PropTypes.element,

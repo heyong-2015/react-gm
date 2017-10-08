@@ -5,16 +5,16 @@ import _ from 'lodash';
 
 class TopHeader extends React.Component {
     render() {
-
-        const {text, settings} = this.props;
+        const {text, settings, onMenuBtnClick} = this.props;
 
         return (
             <Flex className="gm-framework-top-header-default">
-                <Flex alignCenter className="gm-framework-top-header-default-mobile-nav">
-                    <i
-                        className="glyphicon glyphicon-menu-hamburger"
-                        onClick={this.handleToggleMobileNav}
-                    />
+                <Flex
+                    alignCenter
+                    className="gm-framework-top-header-default-mobile-nav"
+                    onClick={onMenuBtnClick}
+                >
+                    <i className="glyphicon glyphicon-menu-hamburger"/>
                 </Flex>
                 <Flex flex/>
                 <Flex>{text}</Flex>
@@ -42,7 +42,8 @@ class TopHeader extends React.Component {
 
 TopHeader.propTypes = {
     text: PropTypes.string,
-    settings: PropTypes.array // [{text, onClick}]
+    settings: PropTypes.array, // [{text, onClick}]
+    onMenuBtnClick: PropTypes.func
 };
 
 export default TopHeader;

@@ -1,7 +1,133 @@
 @media (max-width: 768px) {
   .gm-framework {
-    &-top-header-default-mobile-nav {
-      display: block;
+    .gm-framework-top-header-default {
+      &-mobile-nav {
+        display: block;
+      }
+    }
+
+    .gm-framework-top-content-default {
+      position: absolute;
+      left: -110%;
+      width: 100%;
+      height: 100px;
+      top: 30px;
+      z-index: 100;
+      transition: left .2s ease-out;
+      .gm-framework-container {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      &-nav > a, &-jump > div > a {
+        padding: 0;
+      }
+
+      &-jump {
+        .gm-trigger-popup {
+          left: 0;
+        }
+      }
+    }
+
+    .gm-framework-center {
+      .gm-framework-container {
+        width: 100%;
+        padding: 0;
+      }
+
+      .gm-framework-left {
+        position: absolute;
+        left: -110%;
+        width: 100%;
+        top: 130px;
+        bottom: 0;
+        z-index: 100;
+        transition: left .2s ease-out;
+        padding: 0;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, .5)
+      }
+
+      .gm-framework-breadcrumb {
+        display: none;
+      }
+    }
+
+    .gm-framework-copyright-default {
+      display: none;
+    }
+
+    &.gm-framework-mobile-menu {
+      .gm-framework-top-content-default {
+        left: 0;
+      }
+      .gm-framework-left {
+        left: 0;
+      }
+    }
+  }
+
+  .b-appasdf {
+    .b-app-nav-top {
+      left: -110%;
+      z-index: 100;
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: 30px;
+      transition: left .2s ease-out;
+      .container {
+        flex-direction: column;
+        padding: 0;
+        min-width: 100%;
+        .b-app-nav-x {
+          a {
+            padding: 9px 5px 5px;
+          }
+        }
+      }
+    }
+    .b-app-nav-left {
+      left: -110%;
+      z-index: 100;
+      position: absolute;
+      width: 100%;
+      top: 130px;
+      bottom: 0;
+      transition: left .2s ease-out;
+      .b-app-nav-y {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+    .b-app-center {
+      .container {
+        min-width: 100%;
+        padding: 0;
+      }
+    }
+    .b-app-content {
+      padding: 0;
+      .breadcrumb {
+        display: none;
+      }
+    }
+    .b-app-bottom {
+      display: none;
+    }
+
+    &.b-app-mobile-nav {
+      .b-app-nav-top {
+        left: 0;
+      }
+      .b-app-nav-left {
+        left: 0;
+      }
     }
   }
 }
