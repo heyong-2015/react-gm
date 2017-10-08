@@ -27,7 +27,7 @@ class Framework extends React.Component {
                 <div className={classNames("gm-framework-inner", {
                     'gm-filter-blur-transition': this.state.blur
                 })}>
-                    <div className="gm-framework-full-screen">
+                    <div className="gm-framework-full-height">
                         <div className="gm-framework-top">
                             {topHeader && (
                                 <div className="gm-framework-top-header">{topHeader}</div>
