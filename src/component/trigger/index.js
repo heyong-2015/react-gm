@@ -134,6 +134,7 @@ class Trigger extends React.Component {
 
             return (
                 <div
+                    key="triggerarrow"
                     className={classNames('gm-trigger-arrow', {
                         'gm-trigger-arrow-right': right,
                         'gm-trigger-arrow-top': top

@@ -53,6 +53,7 @@ class DateRangePicker extends React.Component {
                     component={<div className="gm-inline-block"/>}
                     popup={(
                         <Calendar
+                            key="Calendar"
                             selected={begin}
                             onSelect={this.handleSelectBegin}
                             {...beginProps}
@@ -61,6 +62,7 @@ class DateRangePicker extends React.Component {
                 >
                     <input
                         type="text"
+                        key="daterangebegin"
                         className={inputClassName}
                         disabled={disabled}
                         value={begin ? (beginRenderInputValue ? beginRenderInputValue(begin) : moment(begin).format('YYYY-MM-DD')) : ''}
@@ -73,6 +75,7 @@ class DateRangePicker extends React.Component {
                     component={<div className="gm-inline-block"/>}
                     popup={(
                         <Calendar
+                            key="Calendar"
                             selected={end}
                             onSelect={this.handleSelectEnd}
                             {...Object.assign({
@@ -84,6 +87,7 @@ class DateRangePicker extends React.Component {
                     <input
                         ref={ref => this.refEndTarget = ref}
                         type="text"
+                        key="daterangeend"
                         className={inputClassName}
                         disabled={disabled}
                         value={end ? (endRenderInputValue ? endRenderInputValue(end) : moment(end).format('YYYY-MM-DD')) : ''}

@@ -24,7 +24,7 @@ class CollapseWrap extends React.Component {
         return (
             <div>
                 <button onClick={::this.handleCollapse} id="intro4">Collapse toggle</button>
-                <Collapse in={this.state.show}>
+                <Collapse in={this.state.show} name={true}>
                     <div style={{background: 'red'}}>
                         啦啦啦啦
                         <br/>
